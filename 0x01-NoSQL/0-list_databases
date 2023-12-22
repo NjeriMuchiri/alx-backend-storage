@@ -1,0 +1,3 @@
+#!/usr/bin/env python3
+
+mongo --quiet --eval "printjson(db.adminCommand({ listDatabases: 1 }))" | grep name | cut -d '"' -f4
