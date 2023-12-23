@@ -87,3 +87,5 @@ if __name__ == "__main__":
 
     local_redis = redis.Redis()
     print(local_redis.get(key))
+
+    replay(cache.store)
