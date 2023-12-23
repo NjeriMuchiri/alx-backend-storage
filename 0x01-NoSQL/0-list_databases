@@ -1,5 +1,27 @@
 #!/usr/bin/env python3
-#Script for listing all databases
+#Script for listing databases
 
 
-mongo --quiet --eval "printjson(db.adminCommand({ listDatabases: 1 }))" | grep name | cut -d '"' -f4
+from pymongo import MongoClient
+
+def list_databases():
+    # Connect to MongoDB
+    client = MongoClient('localhost', 27017)
+
+    try:
+        # List all databases
+        databases = client.list_database_names()
+
+        # Print the list of databases
+        for db in databases:
+            print(db)
+
+    except Exception as e:
+        print(f"Error: {e}")
+
+    finally:
+        # Close the connection
+        client.close()
+
+if __name__ == "__main__":
+    list_databases()
