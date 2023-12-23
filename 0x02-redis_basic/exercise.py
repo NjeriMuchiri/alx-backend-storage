@@ -35,6 +35,7 @@ def call_history(method: Callable) -> Callable:
 
     return wrapper
 
+
 def replay(method: Callable):
     """Function to display the history of calls for a certain function"""
     input_key = "{}:inputs".format(method.__qualname__)
@@ -49,6 +50,7 @@ def replay(method: Callable):
         args_str = args.decode("utf-8")
         result_str = result.decode("utf-8")
         print("{}(*{}) -> {}".format(method.__qualname__, args_str, result_str))
+
 
 class Cache:
     """Cache class declaration"""
