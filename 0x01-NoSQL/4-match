@@ -1,0 +1,2 @@
+//script that list the content in the holberton sch
+db.school.find({ name: "Holberton school" })
