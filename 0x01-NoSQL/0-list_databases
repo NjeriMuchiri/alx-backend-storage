@@ -1,14 +1,3 @@
-#!/usr/bin/env python3
-#Script for listing databases
+//Script for listing databases
+show dbs
 
-
-from pymongo import MongoClient
-# Connect to MongoDB
-client = MongoClient('mongodb://127.0.0.1:27017')
-
-# Get the list of databases
-database_names = client.list_database_names()
-
-# Print the list of databases
-for db_name in database_names:
-    print(db_name)
